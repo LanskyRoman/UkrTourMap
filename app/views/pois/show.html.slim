@@ -1,0 +1,9 @@
+.row
+  .col-md-8
+    h1 = @poi.name
+    h4 = "Latitude: #{@poi.lat}, Longitude: #{@poi.lon}"
+  .col-md-4
+    .pull-right
+      = link_to 'Edit', edit_poi_path(@poi), class: 'btn btn-default'
+p = @poi.description
+= link_to 'Back', pois_path, class: 'btn btn-default'

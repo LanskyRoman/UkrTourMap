@@ -1,0 +1,27 @@
+.row
+  .col-md-8
+    h1 POIs list
+  .col-md-4
+    .pull-right
+      = link_to 'Add POI', new_poi_path, class: 'btn btn-primary'
+
+.row
+  .col-md-12
+    table.table
+      thead
+        tr
+          th Name
+          th Description
+          th Latitude
+          th Longitude
+          th Edit
+          th Destroy
+      tbody
+        - @pois.each do |poi|
+          tr
+            td = link_to poi.name, poi
+            td = poi.description
+            td = poi.lonlat.x
+            td = poi.lonlat.y
+            td = link_to 'Edit', edit_poi_path(poi), class: 'btn btn-default'
+            td = link_to 'Destroy', edit_poi_path(poi), class: 'btn btn-default'
